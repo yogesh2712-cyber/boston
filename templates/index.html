@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Boston Housing Price Prediction</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f4f4;
+            padding: 30px;
+        }
+        input {
+            width: 200px;
+            padding: 5px;
+            margin: 5px;
+        }
+        button {
+            padding: 10px;
+            background: green;
+            color: white;
+            border: none;
+        }
+        .box {
+            background: white;
+            padding: 20px;
+            width: 500px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h2>Boston Housing Price Prediction</h2>
+
+    <form action="/predict" method="post">
+        <input name="CRIM" placeholder="CRIM"><br>
+        <input name="ZN" placeholder="ZN"><br>
+        <input name="INDUS" placeholder="INDUS"><br>
+        <input name="CHAS" placeholder="CHAS"><br>
+        <input name="NOX" placeholder="NOX"><br>
+        <input name="RM" placeholder="RM"><br>
+        <input name="AGE" placeholder="AGE"><br>
+        <input name="DIS" placeholder="DIS"><br>
+        <input name="RAD" placeholder="RAD"><br>
+        <input name="TAX" placeholder="TAX"><br>
+        <input name="PTRATIO" placeholder="PTRATIO"><br>
+        <input name="B" placeholder="B"><br>
+        <input name="LSTAT" placeholder="LSTAT"><br><br>
+
+        <button type="submit">Predict Price</button>
+    </form>
+
+    {% if prediction %}
+        <h3>Predicted House Price: {{ prediction }}</h3>
+    {% endif %}
+</div>
+
+</body>
+</html>
